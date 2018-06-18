@@ -1,19 +1,25 @@
 # human-activity-recongnition
-The goal is to prepare tidy data that can be used for later analysis.
-Transformation done by run_analysis.R:
 
-Load Data Set
-Load the X_train.txt and X_test.txt datasets and bind them together into 1 main dataset
+El objetivo es preparar datos ordenados que puedan usarse para análisis posteriores. 
+EL proceso es realizado por el script run_analysis.R:
 
-Select only Mean and Std columns
-The meassurements that were representatives for this analysis were all the Means and StdDev. Using regular expressions the script selects only the columns containing that data and creates a subset of the original one.
+## Leer archivos con conjuntos de datos
 
-Labels the data set
-As the original labels were too hard to read, using regular expresions the script changes the original names for more readable ones using as input the features.txt file. Also, adds to the beggining the words MeanOf, so the final script can contains more representative names.
+Leer los datos X_train.txt y X_test.txt y juntarlos en un data set.
 
-Using descriptives activities names
-The script pulls out all the activities from the y_train.txt and y_test.txt. After that it changes the numbers by more understandable names and attach it to the data set in the first position
+## Seleccionar subconunto de columnas.
 
-Add Subjects and create a tidy data set
-After that, the scripts adds the subject column from subjects_train.txt and subjects_test.txt. Using the dplyr package to calculate the average of each variable for each activity and each subject. Finally, the script exports the tidy data to a txt file using write.table
+Las medidas que fueron representantes para este análisis fueron todos los promedios y StdDev. 
+
+## Etiquetar el conjunto de datos 
+
+Etiqueta columnas con nombres de los archivos features.txt, subjects_train.txt y subjects_test.txt. 
+
+## Calcula promedio 
+
+Por medio del paquete dplyr calcula el promedio de cada variable para cada actividad y cada tema. 
+
+## Generación de archivo 
+Finalmente guarda el resultado en un archivo txt.
+
 
